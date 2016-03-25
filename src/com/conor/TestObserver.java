@@ -26,9 +26,23 @@ public class TestObserver {
         b.addObserver(eggMonitor);
         b.addObserver(eggCounter);
 
+        Chicken c = new Chicken("Sam");
+        c.addObserver(eggMonitor);
+        c.addObserver(eggCounter);
+
+
+        Chicken d = new Chicken("Carlos");
+        d.addObserver(eggMonitor);
+        d.addObserver(eggCounter);
+
         a.layEgg();
         b.layEgg();
         a.layEgg();
+        d.layEgg();
+        d.layEgg();
+        d.layEgg();
+        c.layEgg();
+
 
         eggCounter.printEggs();
     }

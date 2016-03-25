@@ -12,8 +12,12 @@ public class EggCounter implements Observer{
 
     HashMap<Chicken, Integer> eggs = new HashMap<>();
 
+
+
     @Override
     public void update(Observable chicken, Object arg) {
+
+        //Chicken chickens = (Chicken)chicken;
 
         if(eggs.containsKey(chicken)) {
             int egg = eggs.get(chicken);
@@ -27,8 +31,8 @@ public class EggCounter implements Observer{
     }
 
     public void printEggs() {
-        for(Object keys: eggs.keySet()) {
-            System.out.println(eggs.get(keys));
+        for(Chicken keys: eggs.keySet()) {
+            System.out.println(keys.name + " has laid: " + eggs.get(keys) + " eggs.");
         }
     }
 }
